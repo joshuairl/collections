@@ -360,6 +360,23 @@ component {
 		return arguments.data;
 	}
 	
+	/**
+	 * Builds a collection of unique elements based on the passed collection.
+	 * @param data	     an array 
+	 * @return            a new collection containing only unique items
+	 **/
+	public any function uniq(){
+		var objs = arguments.data;
+		var newObj = arrayNew(1);
+		
+		for(obj in objs) {
+			if(NOT ArrayFindNoCase(objs,obj)) {
+				arrayAppend(newObj,obj);
+			}
+		}
+		
+		return newObj;			
+	}
 	
 	/**
 	 * Returns the first item in the collection that passes the "test" 
